@@ -1,0 +1,108 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+body{
+  background: white;
+  color: black;
+}
+
+/* NAV */
+
+nav{
+  width: 90%;
+  max-width: 1280px;
+  margin:  1em auto;
+  text-align: center;
+}
+
+.nav-trigger{
+  display:none;
+}
+
+.nav-trigger-label{
+  display:block;
+  font-size: 2.5rem;
+  cursor:pointer;
+}
+
+.menuElements{
+  overflow:hidden;
+  max-height: 0;
+  transform: scaleY(0);
+  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  /* max-height technique
+  If use the "height: auto", the effect not works.
+  Is necessary some value for the CSS create a CSS animate, and we can use "max-height" with a great value for emulate this effect.
+  */
+}
+
+.nav-trigger:checked ~ .menuElements{
+  /*Use a bigger menu height to works fine.*/
+  max-height: 450px;
+  transform: scaleY(1);
+}
+
+.center{
+  text-align: center;
+}
+
+.menuElements a{
+  display: block;
+  color: black;
+  font-size: 1.5em;
+  padding: .5em;
+  margin: .5em 1em;
+  border:none;
+  text-decoration: none;
+}
+
+@media (min-width: 800px) {
+
+  .nav-trigger-label{
+    display:none;
+  }
+
+  .menuElements{
+    display:block;
+    max-height: 250px;
+    transform: scaleY(1);
+  }
+
+  .menuElements a{
+    display: inline-block;
+    border-bottom: solid 0.2rem black;
+    border-top: solid 0.2rem black;
+    font-size: 1em;
+  }
+
+  .menuElements a:hover {
+    border-bottom: solid 0.2rem blue;
+    border-top: solid 0.2rem blue;
+    /*color: orange;*/
+  }
+
+  .menuElements a:active {
+    border-bottom: solid 0.2rem blue;
+    border-top: solid 0.2rem blue;
+    /*color: yellowgreen;*/
+  }
+
+}
+
+/* NAV */
